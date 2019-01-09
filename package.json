@@ -1,0 +1,22 @@
+{
+  "name": "book-library",
+  "version": "1.0.0",
+  "description": "A book library where students and teachers can borrow books",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnamdi16/book-library.git"
+  },
+  "author": "Nwabuokei Nnamdi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nnamdi16/book-library/issues"
+  },
+  "homepage": "https://github.com/nnamdi16/book-library#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
