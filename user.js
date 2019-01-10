@@ -17,9 +17,9 @@ User.prototype.borrowBook = function (name,bookName,author) {
 
 
 const user = new User('Nnamdi', 'Teacher');
-user.borrowBook('Nnamdi', 'Sherlock Holmes','Peter Obi');
+//user.borrowBook('Nnamdi', 'Sherlock Holmes','Peter Obi');
 
 // console.log(user);
-console.log(BorrowBook);
+// console.log(BorrowBook);
 module.exports = User;
 
