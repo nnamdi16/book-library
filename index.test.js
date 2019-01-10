@@ -2,6 +2,7 @@ const Lib = require('./index');
 const Person = require('./person');
 const Admin = require('./admin');
 const User = require('./user');
+const Student = require()
 
 const books = Lib.two;
 const Library = Lib.one;
@@ -41,7 +42,16 @@ describe('Check that an object is an instance of the User class', () => {
 
   test('should return the instance of the User Class', () => {
     expect(user).toBeInstanceOf(User)
-  })
-})
+  });
+});
+
+//Test Student Constructor function.
+describe('Check that an object is an instance of the Student class', () => {
+  const student = new Student('Nnamdi','Student','Senior');
+
+  test('should return the instance of the Student Class', () => {
+    expect(student).toBeInstanceOf(Student);
+  });
+});
 
 
