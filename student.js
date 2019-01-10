@@ -1,5 +1,7 @@
 const User = require('./user');
 const BorrowBook= require('./requestList');
+const issuance = require('./issuanceList');
+const firststudent = issuance.second;
 
 //Create the Student constructor function
 function Student(name,status,studentLevel) {
@@ -17,7 +19,8 @@ const student2 = new Student('Moses','Student', 'Senior');
 // console.log(student);
 
 User.prototype.borrowBook =  function (bookName,author='unknown') {
-	BorrowBook[bookName] = [this.name,this.status,this.studentLevel,bookName,author];
+	BorrowBook[this.name] = [this.status,this.studentLevel,bookName,author];
+	firststudent[this.name] = [this.status,this.studentLevel,bookName,author];
 }
 
 student.borrowBook('Sherlock Holmes','Peter Obi');
