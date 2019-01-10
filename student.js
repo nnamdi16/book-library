@@ -11,5 +11,8 @@ Student.prototype =Object.create(User.prototype);
 Student.prototype.constructor = Student;
 
 const student = new Student('Nnmadi', 'Student','Senior');
-console.log(student);
+// console.log(student);
+
+student.borrowBook('Nnamdi', 'Sherlock Holmes','Peter Obi');
+console.log(BorrowBook);
 module.exports = Student;
