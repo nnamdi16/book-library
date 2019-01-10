@@ -1,6 +1,7 @@
 const Lib = require('./index');
 const Person = require('./person');
 const Admin = require('./admin');
+const User = require('./user');
 
 const books = Lib.two;
 const Library = Lib.one;
@@ -33,5 +34,14 @@ describe('Check that an object is an instance of the Admin class', () => {
     expect(admin).toBeInstanceOf(Admin);
   });
 });
+
+//Test the User Constructor function
+describe('Check that an object is an instance of the User class', () => {
+  const user = new User('Nnamdi','Teacher');
+
+  test('should return the instance of the User Class', () => {
+    expect(user).toBeInstanceOf(User)
+  })
+})
 
 
