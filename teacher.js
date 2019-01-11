@@ -16,8 +16,8 @@ const teacher = new Teacher('Nnamdi','Teacher');
 // console.log(teacher);
 
 User.prototype.borrowBook =  function (bookName,author='unknown') {
-	BorrowBook[`${bookName} ${author}`] = [this.name,this.status];
-	firstTeacher[`${bookName} ${author}`] = [this.name,this.status];
+	BorrowBook[`${bookName} ${author}`] = [this.name];
+	firstTeacher[`${bookName} ${author}`] = [this.name];
 }
 
 teacher.borrowBook('Harry Porter','James Roslyn') ;
