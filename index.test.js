@@ -5,6 +5,8 @@ const User = require('./user');
 const Student = require('./student');
 const Teacher = require('./teacher');
 const Librarys = require('./library');
+const JuniorStudent = require('./juniorStudent');
+const BorrowBook = require('./requestList');
 
 const books = Lib.two;
 const Library = Lib.one;
@@ -78,5 +80,15 @@ describe('Check that a Library object is created when addmethod is called', () =
     expect(Object.keys(Librarys)).toContain(val);
   });
 });
-// console.log(Librarys);
+
+//Test for the User.borrow() method 
+// describe('Check that a borrowBook method is created when borrow method is called', () =>{
+//   it('should return a borrowBook object', () => {
+//     const student1= new JuniorStudent('Saboginda', 'Student','Junior');
+//     const studentval = student1.borrowBook('Sherlock Holmes','Peter Obi');
+    
+//     expect(Object.keys(BorrowBook)).toContain(studentval);
+
+//   });
+// });
 
