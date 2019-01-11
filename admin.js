@@ -26,12 +26,13 @@ Admin.prototype.constructor = Admin;
 //Create an Add book Method
 Admin.prototype.addBook = function(bookName,author,quantity) {
 	Library[`${bookName} by ${author}`] = [quantity];
+	return `${bookName} by ${author}`;
 	// Library["quantity"] = quantity;
 }
 
 
 const admin = new Admin('Nnamdi');
-admin.addBook('Harry Porter', 'James Rosyln',1);
+admin.addBook('Harry Porter','James Rosyln',1);
 admin.addBook('Shades of Purple','Peter Obi', 1);
 admin.addBook('When Nations fall','Chinua Achebe', 1);
 admin.addBook('Common land','Flavio Copes', 1);
@@ -154,9 +155,9 @@ console.log('UserName', userName);
 	for(let index = 0; index < bookArr.length; index++){
 		for(let j = 0; j < userArr.length; j++){
 			for(let k = 0; k < userArr[j].length; k++) {
-				if(userArr[j][k] === bookArr[index] && bookQty[index] > 0 ) {
+				if(userArr[j][k] == bookArr[index] && bookQty[index] > 0 ) {
 					console.log(`${bookArr[index]} issued to ${userName[j][k]}`);
-					 bookQty[index] - 1;
+					 bookQty[index]--;
 					 
 
 				}else if(userArr[j][k] === bookArr[index] && bookQty[index] <=  0 ){
