@@ -22,13 +22,13 @@ User.prototype.borrowBook =  function (bookName,author='unknown') {
 }
 
 
-// const student = new Student('Nnmadi', 'Student','Senior');
+const student = new Student('Nnmadi', 'Student','Senior');
 // const student1 = new Student('Balogun', 'Student', 'Junior');
 // const student2 = new Student('Moses','Student', 'Senior');
 //  console.log(student);
 
-// student.borrowBook('Sherlock Holmes','Peter Obi');
+student.borrowBook('Sherlock Holmes','Peter Obi');
 // student1.borrowBook('Tales of Thames', 'Chinua Achebe');
 // student2.borrowBook('Alexander in the Wonderland', 'Flavio Copes');
-// console.log(BorrowBook);
+console.log(BorrowBook);
 module.exports = Student;

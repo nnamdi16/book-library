@@ -6,8 +6,12 @@ const Student = require('./student');
 const Teacher = require('./teacher');
 const Librarys = require('./library');
 const JuniorStudent = require('./juniorStudent');
+const SeniorStudent = require('./seniorStudent');
 const BorrowBook = require('./requestList');
+const issuance = require('./issuanceList');
 
+const firstStudent = issuance.Senior;
+const secondStudent = issuance.Junior;
 const books = Lib.two;
 const Library = Lib.one;
 //Test for Library Constructor function.
@@ -81,13 +85,35 @@ describe('Check that a Library object is created when addmethod is called', () =
   });
 });
 
-//Test for the User.borrow() method 
-// describe('Check that a borrowBook method is created when borrow method is called', () =>{
-//   it('should return a borrowBook object', () => {
-//     const student1= new JuniorStudent('Saboginda', 'Student','Junior');
-//     const studentval = student1.borrowBook('Sherlock Holmes','Peter Obi');
+// Test for the User.borrow() method override in juniorstudent.js
+describe('Check that the borrowBook method is created when borrow method is called', () =>{
+  it('should return a borrowBook object', () => {
+    const student1= new JuniorStudent('Saboginda', 'Student','Junior');
+    const studentval = student1.borrowBook('Harry Porter','James Roslyn');
     
-//     expect(Object.keys(BorrowBook)).toContain(studentval);
+    expect(Object.keys(BorrowBook)).toContain(studentval);
+
+  });
+});
+
+// Test for the User.borrow() method  override in seniorstudent.js
+describe('Check that the borrowBook method is created when borrow method is called', () =>{
+  it('should return a borrowBook object', () => {
+    const student2= new Student('Nnmadi', 'Student','Senior');
+    const studentval2 = student2.borrowBook('Sherlock Holmes','Peter Obi');
+    
+    expect(Object.keys(BorrowBook)).toContain(studentval2);
+
+  });
+});
+
+// Test for the User.borrow() method in student.js
+// describe('Check that the borrowBook method is created when borrow method is called', () =>{
+//   it('should return a borrowBook object', () => {
+//     const student3= new SeniorStudent('Jamal', 'Student','Senior');
+//     const studentval3 = student2.borrowBook('Shades of Purple','Peter Obi');
+    
+//     expect(Object.keys(BorrowBook)).toContain(studentval2);
 
 //   });
 // });

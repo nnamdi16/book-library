@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1547218299742" clover="3.2.0">
-  <project timestamp="1547218299742" name="All files">
-    <metrics statements="179" coveredstatements="177" conditionals="12" coveredconditionals="8" methods="25" coveredmethods="23" elements="216" coveredelements="208" complexity="0" loc="179" ncloc="179" packages="1" files="11" classes="11">
+<coverage generated="1547222324536" clover="3.2.0">
+  <project timestamp="1547222324536" name="All files">
+    <metrics statements="182" coveredstatements="181" conditionals="12" coveredconditionals="8" methods="25" coveredmethods="24" elements="219" coveredelements="213" complexity="0" loc="182" ncloc="182" packages="1" files="11" classes="11">
       <file name="admin.js" path="C:\Users\WILLIAMS\Documents\Decagon\Institute\checkpoint\book-library\admin.js">
         <metrics statements="88" coveredstatements="88" conditionals="8" coveredconditionals="8" methods="13" coveredmethods="13"/>
         <line num="1" count="1" type="stmt"/>
@@ -120,12 +120,12 @@
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="17" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
@@ -141,7 +141,7 @@
       </file>
       <file name="person.js" path="C:\Users\WILLIAMS\Documents\Decagon\Institute\checkpoint\book-library\person.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="16" type="stmt"/>
+        <line num="3" count="19" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
       </file>
       <file name="requestList.js" path="C:\Users\WILLIAMS\Documents\Decagon\Institute\checkpoint\book-library\requestList.js">
@@ -169,18 +169,21 @@
         <line num="31" count="1" type="stmt"/>
       </file>
       <file name="student.js" path="C:\Users\WILLIAMS\Documents\Decagon\Institute\checkpoint\book-library\student.js">
-        <metrics statements="12" coveredstatements="11" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="19" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="20" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
       </file>
       <file name="teacher.js" path="C:\Users\WILLIAMS\Documents\Decagon\Institute\checkpoint\book-library\teacher.js">
@@ -205,8 +208,8 @@
         <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="6" count="12" type="stmt"/>
-        <line num="7" count="12" type="stmt"/>
+        <line num="6" count="15" type="stmt"/>
+        <line num="7" count="15" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
