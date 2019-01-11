@@ -4,6 +4,7 @@ const Admin = require('./admin');
 const User = require('./user');
 const Student = require('./student');
 const Teacher = require('./teacher');
+const Librarys = require('./library');
 
 const books = Lib.two;
 const Library = Lib.one;
@@ -64,4 +65,18 @@ describe('Check that an object is an instance of the Teacher class', () => {
   });
 });
 
+// Test for the Admin addbook() method.
+describe('Check that a Library object is created when addmethod is called', () => {
+  it('should return  a Library object', () => {
+    
+    const admin = new Admin('Nnamdi');
+    const val = admin.addBook('Shades of Purple','Peter Obi',1)
+    //const expected = {'Shades of Purple by Peter Obi':[1]}
+    //admin.addBook();
+
+    // expect(addBook).toHaveBeenCalled(1);
+    expect(Object.keys(Librarys)).toContain(val);
+  });
+});
+// console.log(Librarys);
 
