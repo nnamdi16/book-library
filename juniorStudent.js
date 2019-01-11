@@ -15,7 +15,7 @@ Junior.prototype.constructor = Junior;
 
 
 User.prototype.borrowBook =  function (bookName,author='unknown') {
-		secondStudent[this.name] = [this.status,this.studentLevel,bookName,author];
+		secondStudent[`${bookName} ${author}`] = [this.name];
 	}
 	
 
