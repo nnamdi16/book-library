@@ -30,7 +30,7 @@ Admin.prototype.addBook = function(bookName,author,quantity) {
 	// Library["quantity"] = quantity;
 }
 
-
+//instance of admin and book created
 const admin = new Admin('Nnamdi');
 admin.addBook('Harry Porter','James Rosyln',1);
 admin.addBook('Shades of Purple','Peter Obi', 1);
