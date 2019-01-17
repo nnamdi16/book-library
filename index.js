@@ -1,15 +1,15 @@
-let books =  [];
+const User = require('./person/user/user');
+const requestList = require('./data/requestList');
+const Teacher = require('./person/user/teacher/teacher');
+const Student = require('./person/user/student/student');
+const Admin = require('./person/admin/admin');
+const library = require('./data/library');
 
-//Create the Library Constructor Function
-function Library(bookName,bookID,quantity,author) {
-	this.bookName = bookName;
-	this.bookID = bookID;
-	this.quantity = quantity;
-	this.author = author;
-  books.push(this);
-}
+const user1 = new Student('Nnamdi','teacher','junior');
+user1.borrowBook('Shades of Home', 'Bachir Lawal');
+console.log(user1);
+console.log(requestList);
 
-
-
-exports.one = Library;
-exports.two = books;
+const admin = new Admin('Galvin Belson');
+admin.addBook('Spiral Shift Island','Anslem Crenshaw', 9);
+console.log(library);

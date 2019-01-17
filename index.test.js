@@ -12,8 +12,10 @@ const issuance = require('./issuanceList');
 
 const firstStudent = issuance.Senior;
 const secondStudent = issuance.Junior;
+const firstTeacher = issuance.Teacher;
 const books = Lib.two;
 const Library = Lib.one;
+
 //Test for Library Constructor function.
 describe('Check that an object is an instance of the Library Class', () => {
   const book1 = new Library('JavaScript', 2, 23, 'Nwabuokei Nnamdi');
@@ -47,7 +49,7 @@ describe('Check that an object is an instance of the Admin class', () => {
 //Test the User Constructor function
 describe('Check that an object is an instance of the User class', () => {
   const user = new User('Nnamdi','Teacher');
-
+  user.borrowBook();
   test('should return the instance of the User Class', () => {
     expect(user).toBeInstanceOf(User)
   });
@@ -81,6 +83,7 @@ describe('Check that a Library object is created when addmethod is called', () =
     //admin.addBook();
 
     // expect(addBook).toHaveBeenCalled(1);
+    console.log(val);
     expect(Object.keys(Librarys)).toContain(val);
   });
 });
@@ -89,9 +92,9 @@ describe('Check that a Library object is created when addmethod is called', () =
 describe('Check that the borrowBook method is created when borrow method is called', () =>{
   it('should return a borrowBook object', () => {
     const student1= new JuniorStudent('Saboginda', 'Student','Junior');
-    const studentval = student1.borrowBook('Harry Porter','James Roslyn');
+    const studentval = student1.borrowBook('Harry Porter','James Rosyln');
     
-    expect(Object.keys(BorrowBook)).toContain(studentval);
+    expect(Object.keys(secondStudent)).toContain(studentval);
 
   });
 });
@@ -99,7 +102,18 @@ describe('Check that the borrowBook method is created when borrow method is call
 // Test for the User.borrow() method  override in seniorstudent.js
 describe('Check that the borrowBook method is created when borrow method is called', () =>{
   it('should return a borrowBook object', () => {
-    const student2= new Student('Nnmadi', 'Student','Senior');
+    const student2= new Student('Gabon Lawal', 'Student','Senior');
+    const studentval2 = student2.borrowBook('Sherlock Holmes','Peter Obi');
+    expect(Object.keys(BorrowBook)).toContain(studentval2);
+
+  });
+});
+
+// Test for the User.borrow() method  override in seniorstudent.js
+
+describe('Check that the borrowBook method  in student.js is instantiated when borrow method is called', () =>{
+  it('should return a borrowBook object', () => {
+    const student2= new Student('Gabon Lawal', 'Student','Senior');
     const studentval2 = student2.borrowBook('Sherlock Holmes','Peter Obi');
     
     expect(Object.keys(BorrowBook)).toContain(studentval2);
@@ -108,13 +122,50 @@ describe('Check that the borrowBook method is created when borrow method is call
 });
 
 // Test for the User.borrow() method in student.js
-// describe('Check that the borrowBook method is created when borrow method is called', () =>{
-//   it('should return a borrowBook object', () => {
-//     const student3= new SeniorStudent('Jamal', 'Student','Senior');
-//     const studentval3 = student2.borrowBook('Shades of Purple','Peter Obi');
+describe('Check that the borrowBook method is created when borrow method is called', () =>{
+  it('should return a borrowBook object', () => {
+    const student3= new SeniorStudent('Jamal', 'Student','Senior');
+    const studentval3 = student3.borrowBook('Shades of Purple','Peter Obi');
     
-//     expect(Object.keys(BorrowBook)).toContain(studentval2);
+    expect(Object.keys(firstStudent)).toContain(studentval3);
 
-//   });
-// });
+  });
+});
 
+
+// Test for the User.borrow() method in student.js
+describe('Check that the borrowBook method is instantiated when borrow method is called', () =>{
+  it('should return a borrowBook object', () => {
+    const user= new User('Sammy', 'Teacher');
+    const userVal = user.borrowBook('Sherlock Holmes','Peter Obi');
+    
+    expect(Object.keys(BorrowBook)).toContain(userVal);
+
+
+  });
+});
+
+// Test for the User.borrow() method in student.js
+describe('Check that the borrowBook method is instantiated when borrow method is called', () =>{
+  it('should return a borrowBook object', () => {
+    const juniorStudent= new JuniorStudent('Gabon Lawal', 'Student','Junior');
+    const juniorStudentVal = juniorStudent.borrowBook('Shades of Purple','Peter Obi');
+    
+    expect(Object.keys(BorrowBook)).toContain(juniorStudentVal);
+
+
+  });
+});
+
+
+// Test for the User.borrow() method in student.js
+describe('Check that the borrowBook method is instantiated in teacher.js when borrow method is called', () =>{
+  it('should return a borrowBook object', () => {
+    const teacher1= new Teacher('Sariwa kali','Teacher');
+    const teacherVal = teacher1.borrowBook('Shades of Purple','Peter Obi');
+    
+    expect(Object.keys(firstTeacher)).toContain(teacherVal);
+
+
+  });
+});

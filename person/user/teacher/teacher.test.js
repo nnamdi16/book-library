@@ -26,7 +26,7 @@ describe('Check if an instance of the borrowBook method is created', () => {
 		expect(requestList).toEqual(result);
 	});
 
-	it('Check if the Object created is an instance of the User Constructor', () => {
+	it('Check if the Object created is an instance of the teacher Constructor', () => {
 		const teacher = new Teacher('Harvey Spectre','Teacher');
 		expect(teacher).toBeInstanceOf(Teacher)
 	});
