@@ -1,5 +1,6 @@
 //Import files from admin.js
 const Admin = require('./admin');
+const library = require('../../data/library');
 
 //Test to check for instance creation of the admin constructor function.
 describe('Check if an instance of the Admin constructor is created', () => {
@@ -18,6 +19,9 @@ describe('Check if an instance of the Admin constructor is created', () => {
 
 describe('Create book when the name of the book is added',() =>{
 	it('Should create an array of object of new books whe instantiated', () => {
-		
+		const admin = new Admin('Galvin Belson');
+		admin.addBook('Spiral Shift Island','Anslem Crenshaw', 9);
+		const result = [{'Spiral Shift Island by Anslem Crenshaw':9}];
+		expect(result).toEqual(library);
 	})
 })
