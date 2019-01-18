@@ -3,6 +3,7 @@ const Person = require('../person');
 const library = require('../../data/library');
 const requestList = require('../../data/requestList');
 const issueList = require('../../data/issueList');
+const returnList = require('../../data/returnList');
 
 //Create admin constructor function
 function Admin(name) {
@@ -59,9 +60,17 @@ Admin.prototype.issueBook = function() {
 		}
 		
 	  }
+}
 
-	// let result = requestList.filter(o => library.find(o2 => o['Book Name'] === o2['Book Name']));
-	// console.log('Final Result',result);
+Admin.prototype.replaceBook = function() {
+	for(let i = 0; i < returnList.length;i++){
+		
+		if(binarySearch(library,returnList[i].BookName)) {
+			console.log(returnList.indexOf(returnList[i].BookName))
+			library[i].Quantity = Math.round(library[i].Quantity + 1);
+		}
+	}
+	return library;
 }
 
 module.exports = Admin;
