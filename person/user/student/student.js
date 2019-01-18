@@ -14,8 +14,11 @@ Student.prototype.constructor = Student;
 // Create the borrowBook prototype method
 User.prototype.borrowBook =  function (bookName,author) {
 	requestList.push({
-		[`${bookName} by ${author}`] : this.name
-	})
+		'BookName' : bookName,
+		'BookLender': this.name,
+		'Author':author,
+		
+	});
 	
 }
 
