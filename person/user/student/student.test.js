@@ -22,7 +22,10 @@ describe('Check if an instance of the borrowBook method is created', () => {
 	it('Should create an instance of the borrow book prototype method', () => {
 		const student= new Student('Calvin Klien','Student','Junior');
 		student.borrowBook('Alexander in the wonderland', 'Sophie Dash');
-		const result = [{'Alexander in the wonderland by Sophie Dash' : 'Calvin Klien'}];
+		const result = [{'BookName':'Alexander in the wonderland',
+		'BookLender':'Calvin Klien',
+		'Author':'Sophie Dash'
+		}];
 		expect(requestList).toEqual(result);
 	});
 
