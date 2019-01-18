@@ -5,7 +5,9 @@ const Person = require('./person');
 describe('Check if an instance of the Person constructor is created', () => {
 	it('Should create an instance of the Person constructor', () => {
 		const person = new Person('Nnamdi');
-		const result = {'name':'Nnamdi'}
+		const result = {
+			'name': 'Nnamdi'
+		}
 		expect(person).toEqual(result)
 	});
 });
