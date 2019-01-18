@@ -1,5 +1,7 @@
 const User = require('../user');
 const requestList = require('../../../data/requestList');
+const returnList = require('../../../data/returnList');
+const library = require('../../../data/library');
 
 //Create constructor function for the Teacher
 function Teacher(name,status,priority) {
@@ -21,5 +23,14 @@ User.prototype.borrowBook =  function (bookName,author) {
 		});
 }
 
+//Override the user returnList prototype method
+User.prototype.returnBook = function(bookName,author) {
+	
+	return returnList.push({
+		'BookName' : bookName,
+		'BookLender': this.name,
+		'Author':author,
+	});
+}
 
 module.exports = Teacher;
