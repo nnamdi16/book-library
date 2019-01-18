@@ -4,21 +4,21 @@ const requestList = require('../../data/requestList');
 const returnList = require('../../data/returnList');
 
 //Create the user constructor function
-function User (name,status) {
-	Person.apply (this,[name]);
+function User(name, status) {
+	Person.apply(this, [name]);
 	this.status = status;
 }
 
 User.prototype = Object.create(Person.prototype);
 User.prototype.constructor = User;
 
-User.prototype.borrowBook = function (bookName,author) {
+User.prototype.borrowBook = function (bookName, author) {
 	return requestList.push({
 		[`${bookName} by ${author}`]: this.name,
 	})
 };
 
-User.prototype.returnBook = function(bookName,author) {
+User.prototype.returnBook = function (bookName, author) {
 	return returnList.push({
 		[`${bookName} by ${author}`]: this.name,
 	});

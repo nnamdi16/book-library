@@ -11,7 +11,9 @@ const JuniorStudent = require('../user/student/junior_student/juniorStudent')
 describe('Check if an instance of the Admin constructor is created', () => {
 	it('Should create an instance of the Admin constructor', () => {
 		const admin = new Admin('Galvin Belson');
-		const result = {'name':'Galvin Belson'}
+		const result = {
+			'name': 'Galvin Belson'
+		}
 		expect(admin).toEqual(result)
 	});
 
@@ -23,48 +25,59 @@ describe('Check if an instance of the Admin constructor is created', () => {
 });
 
 //Test case to test the  addBook prototype method.
-describe('Create book when the name of the book is added',() =>{
+describe('Create book when the name of the book is added', () => {
 	it('Should create an array of object of new books whe instantiated', () => {
 		const admin = new Admin('Galvin Belson');
 		admin.addBook('Shades of Home', 'Bachir Lawal', 9);
-		admin.addBook('Simple Crazy', 'Antolva Cripal',9);
-		const result = [{'BookName':'Shades of Home',
-						'Author':'Bachir Lawal',
-						'Quantity': 9},
-						{'BookName':'Simple Crazy',
-						'Author':'Antolva Cripal',
-						'Quantity': 9}];
+		admin.addBook('Simple Crazy', 'Antolva Cripal', 9);
+		const result = [{
+				'BookName': 'Shades of Home',
+				'Author': 'Bachir Lawal',
+				'Quantity': 9
+			},
+			{
+				'BookName': 'Simple Crazy',
+				'Author': 'Antolva Cripal',
+				'Quantity': 9
+			}
+		];
 		expect(result).toEqual(library);
 	});
 });
 
 //Test case to test the issue book prototype method.
 describe('Issues book  from the request list', () => {
-	it('Should create an array of object stating the user issued book to and the name of the book', () =>{
+	it('Should create an array of object stating the user issued book to and the name of the book', () => {
 		const admin = new Admin('Galvin Belson');
 		admin.addBook('Shades of Home', 'Bachir Lawal', 9);
-		admin.addBook('Simple Crazy', 'Antolva Cripal',8);
-		const user1 = new JuniorStudent('Nnamdi','Student','junior',1);
-		const user4 = new Teacher ('Shakira','Teacher',3);
-		const user2 = new SeniorStudent('Sammy','Student','senior',2);
-		const user3 = new Teacher ('Sophie','Teacher',3);
+		admin.addBook('Simple Crazy', 'Antolva Cripal', 8);
+		const user1 = new JuniorStudent('Nnamdi', 'Student', 'junior', 1);
+		const user4 = new Teacher('Shakira', 'Teacher', 3);
+		const user2 = new SeniorStudent('Sammy', 'Student', 'senior', 2);
+		const user3 = new Teacher('Sophie', 'Teacher', 3);
 
 		user1.borrowBook('Shades of Home', 'Bachir Lawal');
 		user4.borrowBook('Simple Crazy', 'Antolva Cripal');
 		user2.borrowBook('Fall An Emperor', 'Goodwill Sand');
 		user3.borrowBook('Simple Crazy', 'Antolva Cripal');
 
-		admin.issueBook ();
-		const result = [ { BookName: 'Shades of Home',
-							Author: 'Bachir Lawal',
-							Quantity: 8 },
-						{ BookName: 'Simple Crazy',
-							Author: 'Antolva Cripal',
-							Quantity: 7 },
-							{ BookName: 'Simple Crazy',
-							Author: 'Antolva Cripal',
-							Quantity: 7 } ]
+		admin.issueBook();
+		const result = [{
+				BookName: 'Shades of Home',
+				Author: 'Bachir Lawal',
+				Quantity: 8
+			},
+			{
+				BookName: 'Simple Crazy',
+				Author: 'Antolva Cripal',
+				Quantity: 7
+			},
+			{
+				BookName: 'Simple Crazy',
+				Author: 'Antolva Cripal',
+				Quantity: 7
+			}
+		]
 		expect(issueList).toEqual(result)
-	} );
+	});
 });
-
