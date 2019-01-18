@@ -4,6 +4,7 @@ const library = require('../../data/library');
 const requestList = require('../../data/requestList');
 const issueList = require('../../data/issueList');
 const returnList = require('../../data/returnList');
+const binarySearch = require('../../binarySearch');
 
 //Create admin constructor function
 function Admin(name) {
@@ -25,26 +26,7 @@ Admin.prototype.addBook = function (bookName, author, quantity) {
 	})
 }
 
-//Search function to check if a book requested is in the library
-function binarySearch(arr, target) {
-	// console.log(target)
-	let left = 0;
-	let right = arr.length - 1;
-	while (left <= right) {
-		const mid = left + Math.floor((right - left) / 2);
-		if (arr[mid].BookName === target && arr[mid].Quantity > 0) {
-			arr[mid].Quantity = arr[mid].Quantity - 0.5;
-			return arr[mid];
 
-		}
-		if (arr[mid].BookName < target) {
-			left = mid + 1;
-		} else {
-			right = mid - 1;
-		}
-	}
-	return 0;
-}
 
 //Prototype method used to issueBook
 Admin.prototype.issueBook = function () {
@@ -63,5 +45,26 @@ Admin.prototype.issueBook = function () {
 	}
 }
 
+
+//Search function to replace a queue
+// function replaceBook(arr, target) {
+// 	// console.log(target)
+// 	let left = 0;
+// 	let right = arr.length - 1;
+// 	while (left <= right) {
+// 		const mid = left + Math.floor((right - left) / 2);
+// 		if (arr[mid].BookName === target && arr[mid].Quantity > 0) {
+// 			arr[mid].Quantity = arr[mid].Quantity - 0.5;
+// 			return arr[mid];
+
+// 		}
+// 		if (arr[mid].BookName < target) {
+// 			left = mid + 1;
+// 		} else {
+// 			right = mid - 1;
+// 		}
+// 	}
+// 	return 0;
+// }
 
 module.exports = Admin;
