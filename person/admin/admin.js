@@ -25,7 +25,7 @@ Admin.prototype.addBook = function (bookName,author,quantity) {
 	})
 }
 
-
+//Search function to check if a book requested is in the library
   function binarySearch(arr, target) {
 	// console.log(target)
 	  let left = 0;
@@ -46,6 +46,7 @@ Admin.prototype.addBook = function (bookName,author,quantity) {
 	  return 0;
   }
 
+  //Prototype method used to issueBook
 Admin.prototype.issueBook = function() {
 	requestList.sort(function(a,b){
 		return String(a['Priority']).localeCompare(String(b['Priority']));	
@@ -62,15 +63,5 @@ Admin.prototype.issueBook = function() {
 	  }
 }
 
-Admin.prototype.replaceBook = function() {
-	for(let i = 0; i < returnList.length;i++){
-		
-		if(binarySearch(library,returnList[i].BookName)) {
-			console.log(returnList.indexOf(returnList[i].BookName))
-			library[i].Quantity = Math.round(library[i].Quantity + 1);
-		}
-	}
-	return library;
-}
 
 module.exports = Admin;
