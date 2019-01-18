@@ -1,6 +1,7 @@
 //Import Person module to user.js
 const Person = require('../person');
 const requestList = require('../../data/requestList');
+const returnList = require('../../data/returnList');
 
 //Create the user constructor function
 function User (name,status) {
@@ -17,6 +18,11 @@ User.prototype.borrowBook = function (bookName,author) {
 	})
 };
 
+User.prototype.returnBook = function(bookName,author) {
+	return returnList.push({
+		[`${bookName} by ${author}`]: this.name,
+	});
+}
 
 
 module.exports = User;
