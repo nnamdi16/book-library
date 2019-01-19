@@ -4,7 +4,9 @@ const library = require('../../data/library');
 const requestList = require('../../data/requestList');
 const issueList = require('../../data/issueList');
 const returnList = require('../../data/returnList');
-const binarySearch = require('../../binarySearch');
+const binarySearch = require('../../util/binarySearch');
+const replaceSearch = require('../../util/replaceSearch');
+const replaceList = require('../../data/replaceList');
 
 //Create admin constructor function
 function Admin(name) {
@@ -46,25 +48,13 @@ Admin.prototype.issueBook = function () {
 }
 
 
-//Search function to replace a queue
-// function replaceBook(arr, target) {
-// 	// console.log(target)
-// 	let left = 0;
-// 	let right = arr.length - 1;
-// 	while (left <= right) {
-// 		const mid = left + Math.floor((right - left) / 2);
-// 		if (arr[mid].BookName === target && arr[mid].Quantity > 0) {
-// 			arr[mid].Quantity = arr[mid].Quantity - 0.5;
-// 			return arr[mid];
-
-// 		}
-// 		if (arr[mid].BookName < target) {
-// 			left = mid + 1;
-// 		} else {
-// 			right = mid - 1;
-// 		}
-// 	}
-// 	return 0;
-// }
+Admin.prototype.replaceBook = function () {
+	for(let i = 0; i < returnList.length; i++) {
+		if(replaceSearch(library,returnList[i].BookName)) {
+			console.log(returnList[i].BookName);
+			replaceList.push(replaceSearch(library, returnList[i].BookName));
+		}
+	}
+}
 
 module.exports = Admin;
