@@ -45,16 +45,19 @@ Admin.prototype.issueBook = function () {
 		}
 
 	}
+
 }
 
-
+//Method for returning books back to the library by the admin
 Admin.prototype.replaceBook = function () {
-	for(let i = 0; i < returnList.length; i++) {
-		if(replaceSearch(library,returnList[i].BookName)) {
+	for (let i = 0; i < returnList.length; i++) {
+		if (replaceSearch(library, returnList[i].BookName)) {
 			console.log(returnList[i].BookName);
 			replaceList.push(replaceSearch(library, returnList[i].BookName));
-		}
+
+		} 
 	}
+
 }
 
 module.exports = Admin;
