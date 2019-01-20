@@ -5,9 +5,8 @@ function replaceSearch(arr, target) {
 	while (left <= right) {
 		const mid = left + Math.floor((right - left) / 2);
 		if (arr[mid].BookName === target) {
-			arr[mid].Quantity = arr[mid].Quantity + 0.5;
+			arr[mid].Quantity = Math.round(arr[mid].Quantity + 0.5);
 			return arr[mid];
-
 		}
 		if (arr[mid].BookName < target) {
 			left = mid + 1;
