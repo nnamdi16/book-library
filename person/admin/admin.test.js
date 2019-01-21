@@ -67,18 +67,21 @@ describe('Issues book  from the request list', () => {
 		admin.issueBook();
 		const result = [{
 				BookName: 'Shades of Home',
+				BookLender: 'Nnamdi',
 				Author: 'Bachir Lawal',
-				Quantity: 8
+				Priority: 1
 			},
 			{
 				BookName: 'Simple Crazy',
+				BookLender: 'Shakira',
 				Author: 'Antolva Cripal',
-				Quantity: 7
+				Priority: 3
 			},
 			{
 				BookName: 'Simple Crazy',
+				BookLender: 'Sophie',
 				Author: 'Antolva Cripal',
-				Quantity: 7
+				Priority: 3
 			}
 		]
 		expect(issueList).toEqual(result)
@@ -106,19 +109,19 @@ describe('Replaces book returned by the borrower back to the library collection 
 
 		user3.returnBook('Simple Crazy', 'Antolva Cripal');
 		user4.returnBook('Simple Crazy', 'Antolva Cripal');
-		user4.returnBook('Savy Mandy','Longman Calcin')
+		user4.returnBook('Savy Mandy', 'Longman Calcin')
 
 		admin.replaceBook()
 
 		const result = [{
 				BookName: 'Simple Crazy',
 				Author: 'Antolva Cripal',
-				Quantity: 10
+
 			},
 			{
 				BookName: 'Simple Crazy',
 				Author: 'Antolva Cripal',
-				Quantity: 10
+
 			}
 		]
 		expect(replaceList).toEqual(result)
