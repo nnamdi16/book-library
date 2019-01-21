@@ -2,7 +2,7 @@ const User = require('./user');
 const requestList = require('../../data/requestList');
 const returnList = require('../../data/returnList');
 
-//Test to check for instance creation of the user constructor function.
+//Test case to check if the instance of the user constructor function was created.
 describe('Check if an instance of the User constructor is created', () => {
 	it('Should create an instance of the User constructor', () => {
 		const user = new User('Galvin Belson', 'Student');
@@ -20,7 +20,7 @@ describe('Check if an instance of the User constructor is created', () => {
 
 });
 
-//Test to check the borrowBook prototype method
+//Test case to check the borrowBook prototype method
 describe('Check if an instance of the borrowBook method is created', () => {
 	it('Should create an instance of the borrow book prototype method', () => {
 		const user = new User('Galvin Belson');
