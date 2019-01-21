@@ -1,3 +1,3 @@
-//Array that stores books to be issued.
+//Array that stores the list of books issued.
 let issueList = [];
 module.exports = issueList;

@@ -5,7 +5,10 @@ const issueList = require('../../data/issueList');
 const requestList = require('../../data/requestList');
 const Teacher = require('../user/teacher/teacher');
 const SeniorStudent = require('../user/student/senior_student/seniorStudent');
-const JuniorStudent = require('../user/student/junior_student/juniorStudent')
+const JuniorStudent = require('../user/student/junior_student/juniorStudent');
+const replaceList = require('../../data/replaceList');
+const returnList = require('../../data/returnList');
+
 
 //Test case to check for instance creation of the admin constructor function.
 describe('Check if an instance of the Admin constructor is created', () => {
@@ -26,7 +29,7 @@ describe('Check if an instance of the Admin constructor is created', () => {
 
 //Test case to test the  addBook prototype method.
 describe('Create book when the name of the book is added', () => {
-	it('Should create an array of object of new books whe instantiated', () => {
+	it('Should create an array of object of new books when instantiated', () => {
 		const admin = new Admin('Galvin Belson');
 		admin.addBook('Shades of Home', 'Bachir Lawal', 9);
 		admin.addBook('Simple Crazy', 'Antolva Cripal', 9);
@@ -64,20 +67,63 @@ describe('Issues book  from the request list', () => {
 		admin.issueBook();
 		const result = [{
 				BookName: 'Shades of Home',
+				BookLender: 'Nnamdi',
 				Author: 'Bachir Lawal',
-				Quantity: 8
+				Priority: 1
 			},
 			{
 				BookName: 'Simple Crazy',
+				BookLender: 'Shakira',
 				Author: 'Antolva Cripal',
-				Quantity: 7
+				Priority: 3
 			},
 			{
 				BookName: 'Simple Crazy',
+				BookLender: 'Sophie',
 				Author: 'Antolva Cripal',
-				Quantity: 7
+				Priority: 3
 			}
 		]
 		expect(issueList).toEqual(result)
+	});
+});
+
+//Test case to test the replace book prototype method.
+describe('Replaces book returned by the borrower back to the library collection ', () => {
+	it('Should create an array of object that shows update of books in the library', () => {
+		const admin = new Admin('Galvin Belson');
+		admin.addBook('Shades of Home', 'Bachir Lawal', 9);
+		admin.addBook('Simple Crazy', 'Antolva Cripal', 10);
+
+		const user1 = new JuniorStudent('Nnamdi', 'Student', 'junior', 1);
+		const user4 = new Teacher('Shakira', 'Teacher', 3);
+		const user2 = new SeniorStudent('Sammy', 'Student', 'senior', 2);
+		const user3 = new Teacher('Sophie', 'Teacher', 3);
+
+		user1.borrowBook('Shades of Home', 'Bachir Lawal');
+		user4.borrowBook('Simple Crazy', 'Antolva Cripal');
+		user2.borrowBook('Fall An Emperor', 'Goodwill Sand');
+		user3.borrowBook('Simple Crazy', 'Antolva Cripal');
+
+		admin.issueBook();
+
+		user3.returnBook('Simple Crazy', 'Antolva Cripal');
+		user4.returnBook('Simple Crazy', 'Antolva Cripal');
+		user4.returnBook('Savy Mandy', 'Longman Calcin')
+
+		admin.replaceBook()
+
+		const result = [{
+				BookName: 'Simple Crazy',
+				Author: 'Antolva Cripal',
+
+			},
+			{
+				BookName: 'Simple Crazy',
+				Author: 'Antolva Cripal',
+
+			}
+		]
+		expect(replaceList).toEqual(result)
 	});
 });

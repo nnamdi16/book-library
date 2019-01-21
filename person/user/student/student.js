@@ -1,3 +1,4 @@
+//Import files 
 const User = require('../user');
 const requestList = require('../../../data/requestList');
 const returnList = require('../../../data/returnList');
@@ -8,6 +9,7 @@ function Student(name, status, studentLevel) {
 	this.studentLevel = studentLevel;
 }
 
+//Change the prototype name of the Student constructor.
 Student.prototype = Object.create(User.prototype);
 Student.prototype.constructor = Student;
 
