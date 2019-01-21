@@ -1,3 +1,3 @@
-//Array of list of book and their quantity.
+//Array of list of book added to the library in alphabetical order and their quantity.
 let library = [];
 module.exports = library;
