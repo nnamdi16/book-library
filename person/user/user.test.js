@@ -20,37 +20,44 @@ describe('Check if an instance of the User constructor is created', () => {
 
 });
 
-//Test case to check the borrowBook prototype method
+
+
+//Test cases to check for borrowBook method.
 describe('Check if an instance of the borrowBook method is created', () => {
 	it('Should create an instance of the borrow book prototype method', () => {
-		const user = new User('Galvin Belson');
-		user.borrowBook('Sherlock Holmes', 'Peter Obi');
+		const teacher = new User('Harvey Spectre', 'Teacher');
+		teacher.borrowBook('Alexander in the wonderland', 'Sophie Dash');
 		const result = [{
-			'Sherlock Holmes by Peter Obi': 'Galvin Belson'
+			'BookName': 'Alexander in the wonderland',
+			'BookLender': 'Harvey Spectre',
+			'Author': 'Sophie Dash'
+			
 		}];
 		expect(requestList).toEqual(result);
 	});
 
-	it('Check if the Object created is an instance of the User Constructor', () => {
-		const user = new User('Galvin Belson');
+	it('Check if the Object created is an instance of the teacher Constructor', () => {
+		const user = new User('Harvey Spectre', 'Teacher');
 		expect(user).toBeInstanceOf(User)
 	});
 
 });
 
-//Test cases to check the returnList prototype method.
+//Test cases for returnList prototype method.
 describe('Check if an instance of the returnList method is created', () => {
 	it('Should create an instance of the return book list prototype method', () => {
-		const user = new User('Galvin Belson');
-		user.returnBook('Sherlock Holmes', 'Peter Obi');
+		const teacher = new User('Harvey Spectre', 'Teacher');
+		teacher.returnBook('Sherlock Holmes', 'Peter Obi');
 		const result = [{
-			'Sherlock Holmes by Peter Obi': 'Galvin Belson'
+			'BookName': 'Sherlock Holmes',
+			'BookLender': 'Harvey Spectre',
+			'Author': 'Peter Obi',
 		}];
 		expect(returnList).toEqual(result);
 	});
 
-	it('Check if the Object created is an instance of the User Constructor', () => {
-		const user = new User('Galvin Belson');
+	it('Check if the Object created is an instance of the teacher Constructor', () => {
+		const user = new User('Harvey Spectre', 'Teacher');
 		expect(user).toBeInstanceOf(User)
 	});
 
