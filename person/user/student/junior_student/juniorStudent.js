@@ -11,6 +11,7 @@ function JuniorStudent(name, status, studentLevel, priority) {
 	this.priority = priority;
 }
 
+//Change the prototype name of the JuniorStudent.
 JuniorStudent.prototype = Object.create(Student.prototype);
 JuniorStudent.prototype.constructor = JuniorStudent;
 
