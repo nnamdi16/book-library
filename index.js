@@ -27,22 +27,23 @@ user3.borrowBook('Simple Crazy', 'Antolva Cripal');
 
 
 
+console.log('List of books in the library',library);
+
+
+// // console.log(user1);
 
 
 
-// console.log(user1);
-
-
-
-console.log('Request',requestList);
+// console.log('Request List',requestList);
 admin.issueBook();
-console.log('Request',requestList);
-// console.log('Lib',library);
-console.log(issueList);
+console.log('Request List after book issued ',requestList);
+console.log('Library', library);
+// // console.log('Lib',library);
+console.log('List of books issued',issueList);
 user1.returnBook('Simple Crazy', 'Antolva Cripal');
 user3.returnBook('Simple Crazy', 'Antolva Cripal');
 
-console.log('Library return', returnList);
+// console.log('Library return', returnList);
 admin.replaceBook();
 
 console.log('library',library);

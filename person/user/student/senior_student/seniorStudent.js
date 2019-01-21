@@ -10,6 +10,7 @@ function SeniorStudent(name, status, studentLevel, priority) {
 	this.priority = priority;
 }
 
+//Change the prototype method of SeniorStudent constructor.
 SeniorStudent.prototype = Object.create(Student.prototype);
 SeniorStudent.prototype.constructor = SeniorStudent;
 
