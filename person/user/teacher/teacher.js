@@ -1,9 +1,9 @@
 const User = require('../user');
 
 
-function Teacher(name,status,priority) {
+function Teacher(name,status) {
 	User.apply(this,[name,status]);	
-	this.priority = priority;
+	this.priority = 1;
 	
 }
 
