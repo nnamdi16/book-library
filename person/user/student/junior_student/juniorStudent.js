@@ -4,7 +4,7 @@ const Student = require('../student');
 
 
 //Create the Junior Student constructor function
-function JuniorStudent(name, status, studentLevel, priority) {
+function JuniorStudent(name, status, studentLevel) {
 	Student.apply(this, [name, status, studentLevel]);
 	this.priority = 3;
 }
