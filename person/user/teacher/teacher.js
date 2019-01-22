@@ -1,36 +1,16 @@
+//Import required files
 const User = require('../user');
-const requestList = require('../../../data/requestList');
-const returnList = require('../../../data/returnList');
-const library = require('../../../data/library');
 
-//Create constructor function for the Teacher
-function Teacher(name,status,priority) {
+//Creating a teacher constructor
+function Teacher(name,status) {
 	User.apply(this,[name,status]);	
-	this.priority = priority;
+	this.priority = 1;
 	
 }
 
+//Changing the prototype of the Teacher constructor to Teacher
 Teacher.prototype = Object.create(User.prototype);
 Teacher.prototype.constructor = Teacher;
 
-//Override the borrow prototype method from the User constructor function.
-User.prototype.borrowBook =  function (bookName,author) {
-		requestList.push({
-			'BookName' : bookName,
-			'BookLender': this.name,
-			'Author':author,
-			'Priority' :  this.priority
-		});
-}
-
-//Override the user returnList prototype method
-User.prototype.returnBook = function(bookName,author) {
-	
-	return returnList.push({
-		'BookName' : bookName,
-		'BookLender': this.name,
-		'Author':author,
-	});
-}
 
 module.exports = Teacher;

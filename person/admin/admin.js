@@ -46,10 +46,12 @@ Admin.prototype.issueBook = function () {
 
 	//Check if the book requested is in the library and the issue it if it exist.
 	for (let i = 0; i < requestList.length; i++) {
+		//Issues book if the book requested by the user is in the library
 		if (binarySearch(library, requestList[i].BookName)) {
 			console.log(`${requestList[i].BookName} issued to  ${requestList[i].BookLender}`);
 			issueList.push(requestList[i]);
 
+			//Declines the user request if the book is not availavble or the book quantity is zero.
 		} else {
 			console.log(`${requestList[i].BookLender} : ${requestList[i].BookName} not Found or Taken `)
 		}
@@ -62,6 +64,7 @@ Admin.prototype.issueBook = function () {
 //Method for returning books back to the library by the admin
 Admin.prototype.replaceBook = function () {
 	for (let i = 0; i < returnList.length; i++) {
+		//Replaces the book back to the library if is a book in the library
 		if (replaceSearch(library, returnList[i].BookName)) {
 			console.log(returnList[i].BookName);
 			replaceList.push({
@@ -71,7 +74,7 @@ Admin.prototype.replaceBook = function () {
 
 		}
 	}
-	
+
 
 }
 

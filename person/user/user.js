@@ -15,15 +15,21 @@ User.prototype.constructor = User;
 
 //Method for borrowing a book in the library.
 User.prototype.borrowBook = function (bookName, author) {
-	return requestList.push({
-		[`${bookName} by ${author}`]: this.name,
-	})
-};
+	requestList.push({
+		'BookName': bookName,
+		'BookLender': this.name,
+		'Author': author,
+		'Priority': this.priority
+	});
+}
 
 //Method for returning a book in the library.
 User.prototype.returnBook = function (bookName, author) {
+
 	return returnList.push({
-		[`${bookName} by ${author}`]: this.name,
+		'BookName': bookName,
+		'BookLender': this.name,
+		'Author': author,
 	});
 }
 

@@ -13,7 +13,7 @@ function binarySearch(arr, target) {
 
 		}
 
-		//Adjust the search parameters
+		//Adjust the search parameters if it is not equal to the target.
 		if (arr[middle].BookName < target) {
 			startIndex = middle + 1;
 		} else {

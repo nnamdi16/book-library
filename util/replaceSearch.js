@@ -10,6 +10,8 @@ function replaceSearch(arr, target) {
 			arr[middle].Quantity = arr[middle].Quantity + 1;
 			return arr[middle];
 		}
+
+		
 		if (arr[middle].BookName < target) {
 			startIndex= middle + 1;
 		} else {
