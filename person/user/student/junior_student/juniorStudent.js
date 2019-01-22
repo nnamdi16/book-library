@@ -6,7 +6,7 @@ const Student = require('../student');
 //Create the Junior Student constructor function
 function JuniorStudent(name, status, studentLevel, priority) {
 	Student.apply(this, [name, status, studentLevel]);
-	this.priority = priority;
+	this.priority = 3;
 }
 
 //Change the prototype name of the JuniorStudent.
