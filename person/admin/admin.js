@@ -51,7 +51,7 @@ Admin.prototype.issueBook = function () {
 			console.log(`${requestList[i].BookName} issued to  ${requestList[i].BookLender}`);
 			issueList.push(requestList[i]);
 
-		//Declines the user request if the book is not availavble or the book quantity is zero.
+			//Declines the user request if the book is not availavble or the book quantity is zero.
 		} else {
 			console.log(`${requestList[i].BookLender} : ${requestList[i].BookName} not Found or Taken `)
 		}
