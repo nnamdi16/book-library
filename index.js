@@ -10,10 +10,10 @@ const JuniorStudent = require('./person/user/student/junior_student/juniorStuden
 const returnList = require('./data/returnList');
 const replaceList = require('./data/replaceList');
 
-const user1 = new JuniorStudent('Nnamdi','Student','junior',1);
-const user4 = new Teacher ('Shakira','Teacher',3);
-const user2 = new SeniorStudent('Sammy','Student','senior',2);
-const user3 = new Teacher ('Sophie','Teacher',3);
+const user1 = new JuniorStudent('Nnamdi','Student','junior');
+const user4 = new Teacher ('Shakira','Teacher');
+const user2 = new SeniorStudent('Sammy','Student','senior');
+const user3 = new Teacher ('Sophie','Teacher');
 
 const admin = new Admin('Galvin Belson');
 admin.addBook('Shades of Home', 'Bachir Lawal', 9);
